@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%-include('./templates/header.ejs')%>
+        
+</head>
+
+<body>
+
+    <div class="container mt-3">
+        <center><h1><%=  %></h1></center>
+        <p>Muestra, edita los productos y elimina productos:</p>
+        <% if (data) { %>
+          <% data.forEach(function (shoe) { %>
+            <table class="table">
+              <thead class="table-success">
+                <tr>
+                  <th>Marca</th>
+                  <th>Modelo</th>
+                  <th>Color</th>
+                  <th>Talla</th>
+                  <th>Precio</th>
+                  <th>Imagen</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= shoe.marca %></td>
+                  <td><%= shoe.modelo %></td>
+                  <td><%= shoe.color %></td>
+                  <td><%= shoe.talla %></td>
+                  <td><%= shoe.precio %></td>
+                  <td><img src="<%= shoe.imagen %>" alt="<%= shoe.modelo %>" width="100"></td>
+                </tr>
+              </tbody>
+            </table>
+          <% }) %>
+        <% } %>
+      </div>
+    
+    </body>
+</html>
