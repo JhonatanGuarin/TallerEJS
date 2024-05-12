@@ -11,12 +11,47 @@
 
   
     <center>
-    <div class="card" style="width: 38rem;">
-      <img src="..." class="card-img-top" alt="...">
+      <br>
+    <div class="card border-success"  style="width: 48rem;">
+      
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">Agregar zapatos </h5>
+        <form class="row g-3 needs-validation" novalidate>
+          <div class="col-md-6">
+            <label for="validationCustom01" class="form-label">Marca</label>
+            <input type="text" class="form-control" id="validationCustom01" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="inputModelo" class="form-label">Modelo</label>
+            <input type="text" class="form-control" id="inputModelo">
+          </div>
+          <div class="col-6">
+            <label for="inputColor" class="form-label">Color</label>
+            <input type="text" class="form-control" id="inputColor" placeholder="Ingrese el color principal">
+          </div>
+          <div class="col-6">
+            <label for="inputTalla" class="form-label">Talla</label>
+            <input type="text" class="form-control" id="inputTalla" placeholder="Unidades en US">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPrecio" class="form-label">Precio</label>
+            <input type="text" class="form-control" id="inputPrecio" placeholder="USD $">
+          </div>
+
+          <div class="col-md-6">
+            <label for="inputImagen" class="form-label">Url de la imagen</label>
+            <input type="text" class="form-control" id="inputImagen" placeholder="Url donde esta almacenada la imagen">
+          </div>
+          
+          
+        
+          <div class="col-12">
+            <a type="submit" class="btn btn-primary">Guardar</a>
+          </div>
+        </form>
       </div>
     </div>
   </center>
