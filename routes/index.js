@@ -12,9 +12,9 @@ router.get("/", (req, res) => {
   console.log(shoesData);
 });
 
-router.get("/Inventario", (req, res) => {
+router.get("/inventory", (req, res) => {
   if (shoesData.length > 0) {
-    res.render("Inventario.ejs", { title: "Gestión de zapatos", data: shoesData });
+    res.render("inventory.ejs", { title: "Gestión de zapatos", data: shoesData });
     console.log(shoesData);
   } else {
     console.log("no hay datos");
@@ -35,8 +35,8 @@ router.get("/inventarios", (req, res) => {
   res.render("inventario.ejs", { title: "direccionar pg" });
 });
 
-router.get("/Agregar_producto", (req, res) => {
-  res.render("Agregar_producto.ejs", { title: "direccionar pg" });
+router.get("/add_product", (req, res) => {
+  res.render("addproducts.ejs", { title: "direccionar pg" });
 });
 
 module.exports = router;
