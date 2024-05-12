@@ -11,7 +11,7 @@
     <div class="container mt-3">
         <center><h1><%=  %></h1></center>
         <p>Muestra, edita los productos y elimina productos:</p>
-      
+          <%if(data.length > 0){%>
             <table class="table">
               <thead class="table-success">
                 <tr>
@@ -23,8 +23,9 @@
                   <th>Imagen</th>
                 </tr>
               </thead>
+              <% data.forEach(function (shoe) { %>
               <tbody>
-                <tr>
+                <tr style="vertical-align: middle;">
                   <td><%= shoe.marca %></td>
                   <td><%= shoe.modelo %></td>
                   <td><%= shoe.color %></td>
@@ -33,8 +34,11 @@
                   <td><img src="<%= shoe.imagen %>" alt="<%= shoe.modelo %>" width="100"></td>
                 </tr>
               </tbody>
+              <% }) %>
             </table>
-       
+          <%} else {%>
+            <h2>No hay libros disponible </h2>
+          <%}%>
       </div>
     
     </body>
