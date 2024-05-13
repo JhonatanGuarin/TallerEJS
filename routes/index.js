@@ -8,6 +8,9 @@ const {v4: uuidv4} = require('uuid')
 const shoeDataPath = path.join(__dirname, "..", "resource", "file", "shoes.json");
 let Shoes = JSON.parse(fs.readFileSync(shoeDataPath, "utf-8"));
 
+const salesDataPath = path.join(__dirname, "..", "resource", "file", "salesRegistration.json");
+let Sales = JSON.parse(fs.readFileSync(salesDataPath, "utf-8"));
+
 router.get("/", (req, res) => {
   res.render("index.ejs", { title: "Gestión de zapatos", data: Shoes });
   console.log(Shoes);
@@ -74,6 +77,51 @@ router.post("/addproducts", (req, res) => {
     res.redirect("/inventory")
 
 })
+
+
+router.get('/edit/:id', (req,res) => {
+
+  const shoeId = req.params.id;
+  const shoe = Shoes.find(shoe => shoe.id === shoeId);
+  res.render('modifyShoe.ejs', { data: shoe });
+})
+
+router.post('/edit/:id', (req,res) => {
+
+  const shoeId = req.params.id;
+  const updatedData = req.body;
+  const shoe = Shoes.findIndex(shoe => shoe.id === shoeId);
+
+  Shoes[shoe] = { ...Shoes[shoe], ...updatedData };
+  
+  const  json_shoes = JSON.stringify(Shoes)
+  fs.writeFileSync(shoeDataPath, json_shoes, 'utf-8')
+  res.redirect("/inventory")
+
+})
+
+
+// Ruta para manejar la solicitud POST de /checkout
+router.post('/checkout', (req, res) => {
+  // Obtener los productos seleccionados del cuerpo de la solicitud
+  const selectedProducts = req.body.selectedProducts;
+
+  // Obtener la fecha y hora actual
+  const currentDate = new Date();
+  const dateTimeString = currentDate.toISOString(); // Formato ISO: AAAA-MM-DDTHH:MM:SSZ
+
+  const ventaCompleta = {
+    [dateTimeString]: selectedProducts
+  };
+
+  // Guardar los datos en un archivo JSON
+  Sales.push(ventaCompleta)
+  const salesDataPath = path.join(__dirname, "..", "resource", "file", "salesRegistration.json");
+  fs.writeFileSync(salesDataPath, JSON.stringify(Sales, null, 2));
+
+  // Envía una respuesta al cliente
+  res.json({ message: 'Productos seleccionados y cantidades procesados y guardados con fecha y hora' });
+});
 
 
 module.exports = router;

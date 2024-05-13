@@ -1,58 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <%-include('./templates/header.ejs')%>
-
+  <%-include('./templates/header.ejs')%>
 </head>
-
 <body>
-
-    <%-include('./templates/navagation.ejs')%>
-        <form action="">
-            <div class="container p-4">
-                <div class="row">
-                    <% data.forEach(function (shoe) { %>
-
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-header">
-                                    <%= shoe.Brand%> / <%= shoe.Model%>
-                                </div>
-                                <img src="<%= shoe.Image%>" class="card-img-top">
-                                <div class="card-body">
-                                    <p>
-                                        <%= shoe.Price %>
-                                    </p>
-                                </div>
-                                <div class="card footer">
-                                    <!-- Checkbox -->
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="comprarCheckbox-<%= shoe.id %>" data-target="cantidadesDiv-<%= shoe.id %>">
-                                        <label class="form-check-label" for="comprarCheckbox-<%= shoe.id %>">Comprar</label>
-                                      </div>
-                                     
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <% }) %>
-                            <div class="col-12">
-                                <input type="submit" value="Guardar" class="btn btn-primary">
-
-                            </div>
-
+  <%-include('./templates/navagation.ejs')%>
+  <form action="">
+    <div class="container p-4">
+      <div class="row">
+        <% data.forEach(function (shoe) { %>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                <%= shoe.Brand%> / <%= shoe.Model%>
+              </div>
+              <img src="<%= shoe.Image%>" class="card-img-top">
+              <div class="card-body">
+                <p><%= shoe.Price %></p>
+              </div>
+              <div class="card footer">
+                <!-- Checkbox -->
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="comprarCheckbox-<%= shoe.id %>" data-target="cantidadesDiv-<%= shoe.id %>" name="selectedProducts">
+                  <label class="form-check-label" for="comprarCheckbox-<%= shoe.id %>">Comprar</label>
                 </div>
+              </div>
             </div>
-
-
-        </form>
-
-        <footer>
-
-        </footer>
-        <script src="/script.js"></script>
+          </div>
+        <% }) %>
+        <div class="col-12">
+          <input type="submit" value="Guardar" class="btn btn-primary">
+        </div>
+      </div>
+    </div>
+  </form>
+  <footer></footer>
+  <script src="/script.js"></script>
 </body>
-
 </html>
