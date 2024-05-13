@@ -98,5 +98,30 @@
       ],
       "TotalPrice": 489.95
     }
+  },
+  {
+    "2024-05-13T22:13:57.428Z": {
+      "detalles": [
+        {
+          "id": "584a0802",
+          "Brand": "Clarks",
+          "Model": "Tilden Walk",
+          "Color": "marrón",
+          "Size": "44",
+          "amount": 3,
+          "Price": "109.99"
+        },
+        {
+          "id": "a42f2b63",
+          "Brand": "Adidas",
+          "Model": "NMD R1",
+          "Color": "blanco",
+          "Size": "43",
+          "amount": 1,
+          "Price": "139.99"
+        }
+      ],
+      "TotalPrice": 469.96
+    }
   }
 ]
