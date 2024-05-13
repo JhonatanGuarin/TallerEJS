@@ -101,7 +101,7 @@ router.post('/edit/:id', (req,res) => {
 })
 
 
-// Ruta para manejar la solicitud POST de /checkout
+
 router.post('/checkout', (req, res) => {
   // Obtener los productos seleccionados del cuerpo de la solicitud
   const selectedProducts = req.body.selectedProducts;
