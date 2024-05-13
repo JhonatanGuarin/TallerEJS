@@ -123,5 +123,62 @@
       ],
       "TotalPrice": 469.96
     }
+  },
+  {
+    "2024-05-13T23:12:04.238Z": {
+      "detalles": [
+        {
+          "id": "584a0802",
+          "Brand": "Clarks",
+          "Model": "Tilden Walk",
+          "Color": "marrón",
+          "Size": "44",
+          "amount": 1,
+          "Price": "109.99"
+        }
+      ],
+      "TotalPrice": 109.99
+    }
+  },
+  {
+    "2024-05-13T23:14:43.131Z": {
+      "detalles": [
+        {
+          "id": "a42f2b63",
+          "Brand": "Adidas",
+          "Model": "NMD R1",
+          "Color": "blanco",
+          "Size": "43",
+          "amount": 10,
+          "Price": "139.99"
+        }
+      ],
+      "TotalPrice": 1399.9
+    }
+  },
+  {
+    "2024-05-13T23:15:28.461Z": {
+      "detalles": [
+        {
+          "id": "a835a0b8",
+          "Brand": "Nike",
+          "Model": "Air Force 1 Trenzas",
+          "Color": "blanco",
+          "Size": "42",
+          "amount": 1,
+          "Price": "89.99"
+        },
+        {
+          "id": "0a50dbb5",
+          "Brand": "Nike",
+          "Model": "Air Max 270",
+          "Color": "negro",
+          "Size": "44",
+          "amount": 1,
+          "Price": "149.99"
+        }
+      ],
+      "TotalPrice": 239.98000000000002
+    }
   }
 ]

@@ -2,7 +2,6 @@ const router = require("express").Router();
 const { renderFile } = require("ejs");
 const path = require("path");
 const fs = require("fs");
-const {v4: uuidv4} = require('uuid')
 const shortid = require('shortid');
 
 // Leer el archivo shoes.json
