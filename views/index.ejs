@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <%-include('./templates/header.ejs')%>
-   
-
+  <%-include('./templates/header.ejs')%>
 </head>
-
 <body>
 
     <%-include('./templates/navagation.ejs')%>
-        <form id="shoeForm" action="/save" method="post">
+        <form action="">
             <div class="container p-4">
                 <div class="row">
                     <% data.forEach(function (shoe) { %>
@@ -30,13 +26,13 @@
                                     <!-- Checkbox -->
                                    
                                     
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" data-bs-toggle="collapse" data-bs-target="#collapseExample-<%= shoe.id %>" aria-expanded="false" aria-controls="collapseExample-<%= shoe.id %>" name="selectedShoes[]" value="<%= shoe.id %>">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                         <label class="form-check-label" for="comprarCheckbox-<%= shoe.id %>">Comprar</label>
                                     </div>
-                                    <div class="collapse" id="collapseExample-<%= shoe.id %>">
+                                    <div class="collapse" id="collapseExample">
                                         <div class="d-flex align-items-center mt-2 cantidades">
-                                            <input type="number" class="form-control mx-2" value="1" min="1" style="max-width: 90px;" id="cantidadInput-<%= shoe.id %>">
+                                            <input type="number" class="form-control mx-2" value="1" min="1" style="max-width: 80px;">
                                         </div>
                                     </div>
                                     <br>
@@ -49,7 +45,7 @@
 
                         <% }) %>
                             <div class="col-12">
-                                <a href="/invoicepreview" class="btn btn-primary">Previsualizacion de factura</a>
+                                <input type="submit" value="Guardar" class="btn btn-primary">
 
                             </div>
 
@@ -65,4 +61,4 @@
         <script src="/script.js"></script>
         
 </body>
-
+</html>

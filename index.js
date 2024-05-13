@@ -17,7 +17,7 @@ app.set('view engine', 'ejs')
 
 // Middlewares
 app.use(express.urlencoded({extended: false}))
-
+app.use(express.json())
 
 // Routes
 app.use(require('./routes/index'))
