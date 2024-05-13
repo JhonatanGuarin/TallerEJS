@@ -64,5 +64,16 @@ router.post("/addproducts", (req, res) => {
     res.redirect('/')
   })
 
+  router.get('/delete/:id', (req,res) => {
+    //console.log(req.params)
+    //res.send("recibido")
+
+    Shoes = Shoes.filter(shoe => shoe.id != req.params.id)
+    const  json_shoes = JSON.stringify(Shoes)
+    fs.writeFileSync(shoeDataPath, json_shoes, 'utf-8')
+    res.redirect("/inventory")
+
+})
+
 
 module.exports = router;
