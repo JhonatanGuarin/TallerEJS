@@ -3,6 +3,7 @@ const { renderFile } = require("ejs");
 const path = require("path");
 const fs = require("fs");
 const {v4: uuidv4} = require('uuid')
+const shortid = require('shortid');
 
 // Leer el archivo shoes.json
 const shoeDataPath = path.join(__dirname, "..", "resource", "file", "shoes.json");
@@ -11,15 +12,26 @@ let Shoes = JSON.parse(fs.readFileSync(shoeDataPath, "utf-8"));
 const salesDataPath = path.join(__dirname, "..", "resource", "file", "salesRegistration.json");
 let Sales = JSON.parse(fs.readFileSync(salesDataPath, "utf-8"));
 
+
 router.get("/", (req, res) => {
   res.render("index.ejs", { title: "Gestión de zapatos", data: Shoes });
   console.log(Shoes);
 });
 
+
 router.get("/inventory", (req, res) => {
   if (Shoes.length > 0) {
     res.render("inventory.ejs", { title: "Gestión de zapatos", data: Shoes });
     console.log(Shoes);
+  } else {
+    console.log("no hay datos");
+     }
+});
+
+router.get("/Sales", (req, res) => {
+  if (Shoes.length > 0) {
+    res.render("Sales.ejs", { title: "Gestión de zapatos", data: Sales });
+    console.log(Sales);
   } else {
     console.log("no hay datos");
      }
@@ -43,7 +55,7 @@ router.post("/addproducts", (req, res) => {
     }
   
     let newShoe = {
-      id: uuidv4(),
+      id: shortid(),
       Brand,
       Model,
       Color,
@@ -108,12 +120,40 @@ router.post('/checkout', (req, res) => {
 
   // Obtener la fecha y hora actual
   const currentDate = new Date();
-  const dateTimeString = currentDate.toISOString(); // Formato ISO: AAAA-MM-DDTHH:MM:SSZ
+  const dateTimeString = currentDate.toISOString();
 
-  const ventaCompleta = {
-    [dateTimeString]: selectedProducts
+  // Leer los datos de los zapatos desde el archivo JSON
+  const shoesDataPath = path.join(__dirname, "..", "resource", "file", "shoes.json");
+  const shoesData = JSON.parse(fs.readFileSync(shoesDataPath));
+
+  // Crear un objeto con los detalles de los productos seleccionados
+  const selectedProductsDetails = selectedProducts.map(product => {
+    const shoeDetails = shoesData.find(shoe => shoe.id === product.id);
+      // Se encontró una coincidencia
+   // Se encontró una coincidencia
+   return {
+    id: product.id,
+    Brand: shoeDetails.Brand,
+    Model: shoeDetails.Model,
+    Color: shoeDetails.Color,
+    Size: shoeDetails.Size,
+    amount: product.cantidad,
+    Price: shoeDetails.Price // Agregar el precio del zapato
   };
+});
 
+// Calcular el precio total de la venta
+const totalPrice = selectedProductsDetails.reduce((total, product) => {
+  return total + (product.Price * product.amount);
+}, 0);
+
+// Crear el objeto de venta completa
+const ventaCompleta = {
+  [dateTimeString]: {
+    detalles: selectedProductsDetails,
+    TotalPrice: totalPrice
+  }
+};
   // Guardar los datos en un archivo JSON
   Sales.push(ventaCompleta)
   const salesDataPath = path.join(__dirname, "..", "resource", "file", "salesRegistration.json");
@@ -122,6 +162,5 @@ router.post('/checkout', (req, res) => {
   // Envía una respuesta al cliente
   res.json({ message: 'Productos seleccionados y cantidades procesados y guardados con fecha y hora' });
 });
-
 
 module.exports = router;

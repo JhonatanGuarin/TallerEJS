@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%-include('./templates/header.ejs')%>
+</head>
+<body>
+
+    <%-include('./templates/navagation.ejs')%>
+  <div class="container">
+    <h1 class="mt-4">Ventas</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Zapatos vendidos</th>
+          <th>Cantidad</th>
+          <th>Precio total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach(venta => { %>
+          <% const fecha = Object.keys(venta)[0]; %>
+          <% const detalles = venta[fecha].detalles; %>
+          <% const precioTotal = detalles.reduce((total, detalle) => total + detalle.Price * detalle.amount, 0); %>
+          <% const rowSpan = detalles.length; %>
+          <tr style="vertical-align: middle;">
+            <td rowspan="<%= rowSpan %>"><%= fecha %></td>
+            <td><%= detalles[0].Brand %> <%= detalles[0].Model %></td>
+            <td><%= detalles[0].amount %></td>
+            <td rowspan="<%= rowSpan %>">$<%= precioTotal.toFixed(2) %></td>
+          </tr>
+          <% for (let i = 1; i < detalles.length; i++) { %>
+            <tr>
+              <td><%= detalles[i].Brand %> <%= detalles[i].Model %></td>
+              <td><%= detalles[i].amount %></td>
+            </tr>
+          <% } %>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

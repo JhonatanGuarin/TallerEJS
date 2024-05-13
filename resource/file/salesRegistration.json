@@ -1,22 +1,102 @@
 [
   {
-    "2024-05-13T20:00:22.711Z": [
-      {
-        "id": "584a0802",
-        "cantidad": 1
-      },
-      {
-        "id": "a42f2b63",
-        "cantidad": 1
-      }
-    ]
+    "2024-05-13T21:51:21.034Z": {
+      "detalles": [
+        {
+          "id": "de4ce02d",
+          "Brand": "Puma",
+          "Model": "RS-X",
+          "Color": "rojo",
+          "Size": "43",
+          "amount": 2,
+          "Price": "99.99"
+        },
+        {
+          "id": "290707b7",
+          "Brand": "Puma",
+          "Model": "Cali Sport",
+          "Color": "azul",
+          "Size": "41",
+          "amount": 1,
+          "Price": "89.99"
+        }
+      ],
+      "TotalPrice": 289.96999999999997
+    }
   },
   {
-    "2024-05-13T20:18:23.883Z": [
-      {
-        "id": "0a50dbb5",
-        "cantidad": 1
-      }
-    ]
+    "2024-05-13T21:51:45.879Z": {
+      "detalles": [
+        {
+          "id": "584a0802",
+          "Brand": "Clarks",
+          "Model": "Tilden Walk",
+          "Color": "marrón",
+          "Size": "44",
+          "amount": 1,
+          "Price": "109.99"
+        },
+        {
+          "id": "c018ff70",
+          "Brand": "Timberland",
+          "Model": "6-Inch Premium",
+          "Color": "amarillo",
+          "Size": "41",
+          "amount": 5,
+          "Price": "149.99"
+        },
+        {
+          "id": "8725e07e",
+          "Brand": "Adidas",
+          "Model": "Ultraboost",
+          "Color": "gris",
+          "Size": "40",
+          "amount": 11,
+          "Price": "179.99"
+        }
+      ],
+      "TotalPrice": 2839.83
+    }
+  },
+  {
+    "2024-05-13T21:51:53.064Z": {
+      "detalles": [
+        {
+          "id": "a42f2b63",
+          "Brand": "Adidas",
+          "Model": "NMD R1",
+          "Color": "blanco",
+          "Size": "43",
+          "amount": 10,
+          "Price": "139.99"
+        }
+      ],
+      "TotalPrice": 1399.9
+    }
+  },
+  {
+    "2024-05-13T22:03:51.957Z": {
+      "detalles": [
+        {
+          "id": "de4ce02d",
+          "Brand": "Puma",
+          "Model": "RS-X",
+          "Color": "rojo",
+          "Size": "43",
+          "amount": 4,
+          "Price": "99.99"
+        },
+        {
+          "id": "290707b7",
+          "Brand": "Puma",
+          "Model": "Cali Sport",
+          "Color": "azul",
+          "Size": "41",
+          "amount": 1,
+          "Price": "89.99"
+        }
+      ],
+      "TotalPrice": 489.95
+    }
   }
 ]
