@@ -15,18 +15,18 @@
                 <div class="row">
                     <% data.forEach(function (shoe) { %>
 
-                        <div class="col-md-4">
+                        <div class="col-md-4" style="margin-bottom: 10px;">
                             <div class="card">
                                 <div class="card-header">
                                     <%= shoe.Brand%> / <%= shoe.Model%>
                                 </div>
                                 <img src="<%= shoe.Image%>" class="card-img-top">
-                                <div class="card-body">
+                                <div class="card-body" >
                                     <p>
                                         <%= shoe.Price %>
                                     </p>
                                 </div>
-                                <div class="card footer">
+                                <div class="card footer" >
                                     <!-- Checkbox -->
                                    
                                     
@@ -39,6 +39,8 @@
                                             <input type="number" class="form-control mx-2" value="1" min="1" style="max-width: 80px;">
                                         </div>
                                     </div>
+                                    <br>
+                                    <br>
                                      
 
                                 </div>
