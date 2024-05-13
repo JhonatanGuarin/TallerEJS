@@ -3,62 +3,60 @@
 
 <head>
   <%-include('./templates/header.ejs')%>
-        
+</head>
 
-
-
-  
-
-  
+<body>
+  <%-include('./templates/navagation.ejs')%>
     <center>
       <br>
-    <div class="card border-success"  style="width: 48rem;">
-      
-      <div class="card-body">
-        <h5 class="card-title">Agregar zapatos </h5>
-        <form class="row g-3 needs-validation" novalidate>
-          <div class="col-md-6">
-            <label for="validationCustom01" class="form-label">Marca</label>
-            <input type="text" class="form-control" id="validationCustom01" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label for="inputModelo" class="form-label">Modelo</label>
-            <input type="text" class="form-control" id="inputModelo">
-          </div>
-          <div class="col-6">
-            <label for="inputColor" class="form-label">Color</label>
-            <input type="text" class="form-control" id="inputColor" placeholder="Ingrese el color principal">
-          </div>
-          <div class="col-6">
-            <label for="inputTalla" class="form-label">Talla</label>
-            <input type="text" class="form-control" id="inputTalla" placeholder="Unidades en US">
-          </div>
-          <div class="col-md-6">
-            <label for="inputPrecio" class="form-label">Precio</label>
-            <input type="text" class="form-control" id="inputPrecio" placeholder="USD $">
-          </div>
+      <div class="card border-success" style="width: 48rem;">
 
-          <div class="col-md-6">
-            <label for="inputImagen" class="form-label">Url de la imagen</label>
-            <input type="text" class="form-control" id="inputImagen" placeholder="Url donde esta almacenada la imagen">
-          </div>
-          
-          
-        
-          <div class="col-12">
-            <a type="submit" class="btn btn-primary">Guardar</a>
-          </div>
-        </form>
+        <div class="card-body">
+          <h5 class="card-title">Agregar zapatos </h5>
+
+          <form method="POST" action="/addproducts" class="row g-3 needs-validation">
+            <div class="col-md-6">
+              <label for="Brand" class="form-label">Marca</label>
+              <input type="text" class="form-control" id="Brand" name="Brand" required>
+            </div>
+            <div class="col-md-6">
+              <label for="Model" class="form-label">Modelo</label>
+              <input type="text" class="form-control" id="Model" name="Model">
+            </div>
+            <div class="col-6">
+              <label for="Color" class="form-label">Color</label>
+              <input type="text" class="form-control" id="Color" name="Color" placeholder="Ingrese el color principal">
+            </div>
+            <div class="col-6">
+              <label for="Size" class="form-label">Talla</label>
+              <input type="text" class="form-control" id="Size" name="Size" placeholder="Unidades en US">
+            </div>
+            <div class="col-md-6">
+              <label for="Price" class="form-label">Precio</label>
+              <input type="text" class="form-control" id="Price" name="Price" placeholder="USD $">
+            </div>
+
+            <div class="col-md-6">
+              <label for="Image" class="form-label">Url de la imagen</label>
+              <input type="text" class="form-control" id="Image" name="Image"
+                placeholder="Url donde esta almacenada la imagen">
+            </div>
+
+
+
+            <div class="col-12">
+              <input type="submit" value="Guardar" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
-  </center>
-   
- <!-- Archivos JavaScript de Bootstrap -->
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-   
+    </center>
+
+    <!-- Archivos JavaScript de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
 
 </html>

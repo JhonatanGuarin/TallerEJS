@@ -18,6 +18,7 @@ app.use('/css', express.static(path.join(__dirname, 'public/css')));
 app.use('/css', express.static(path.join(__dirname, 'public/img')));
 //midleware
 app.use("/", require("./routes/index"));
+app.use(express.urlencoded({ extended: true }));
 
 app.listen(app.get("PORT"), () =>
     console.log(`Server listen at Port ${app.get("PORT")}`)

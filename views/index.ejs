@@ -7,18 +7,21 @@
 </head>
 
 <body>
+
+    <%-include('./templates/navagation.ejs')%>
+
     <div class="container p-4">
         <div class="row">
             <% data.forEach(function (shoe) { %>
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">
-                            <%= shoe.marca%> / <%= shoe.modelo%>
+                            <%= shoe.Brand%> / <%= shoe.Model%>
                         </div>
-                        <img src="<%= shoe.imagen%>" class="card-img-top">
+                        <img src="<%= shoe.Image%>" class="card-img-top">
                         <div class="card-body">
                             <p>
-                                <%= shoe.precio %>
+                                <%= shoe.Price %>
                             </p>
                         </div>
                         <div class="card footer">
