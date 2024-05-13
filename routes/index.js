@@ -28,6 +28,8 @@ router.get("/addproducts", (req, res) => {
 });
 
 
+
+
 router.post("/addproducts", (req, res) => {
     
   console.log(req.body.Model)
@@ -74,6 +76,20 @@ router.post("/addproducts", (req, res) => {
     res.redirect("/inventory")
 
 })
+//compras 
+
+
+
+
+//para hacer el compras
+router.get('/', (req, res) => {
+  res.render('index', { data: shoesData });
+});
+
+
+
+
+
 
 
 module.exports = router;

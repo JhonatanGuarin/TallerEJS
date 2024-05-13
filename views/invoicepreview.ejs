@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%-include('./templates/header.ejs')%>
+</head>
+<body>
+  <%-include('./templates/navagation.ejs')%>
+
+  <h1>Zapatos seleccionados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Cantidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% selectedShoesData.forEach(shoe => { %>
+      <tr>
+        <td><%= shoe.brand %></td>
+        <td><%= shoe.model %></td>
+        <td><%= shoe.quantity %></td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+  <footer>
+    <%-include('./templates/footer.ejs')%>
+  </footer>
+  <script src="/script.js"></script>
+</body>
+</html>
