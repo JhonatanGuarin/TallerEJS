@@ -3,8 +3,7 @@
 
 <head>
   <%-include('./templates/header.ejs')%>
-        
-</head>
+ </head>
 
 <body>
   <%-include('./templates/navagation.ejs')%>
@@ -20,7 +19,9 @@
                   <th>Color</th>
                   <th>Talla</th>
                   <th>Precio</th>
+                  <th>Stock</th>
                   <th>Imagen</th>
+                  <th>Acciones</th>
                 </tr>
               </thead>
               <% data.forEach(function (shoe) { %>
@@ -31,7 +32,12 @@
                   <td><%= shoe.Color %></td>
                   <td><%= shoe.Size %></td>
                   <td><%= shoe.Price %></td>
+                  <td><%= shoe.Stock %></td>
                   <td><img src="<%= shoe.Image %>" alt="<%= shoe.Model %>" width="100"></td>
+                  <td>
+                    <a href="/edit/<%= shoe.id %>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                    <a href="/delete/<%= shoe.id %>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>                   
+                  </td>
                 </tr>
               </tbody>
               <% }) %>
