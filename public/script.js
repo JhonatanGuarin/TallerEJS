@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 console.log('si esta pasando malpario');
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -79,3 +80,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+=======
+>>>>>>> 5ccaeaca9fc8b44e00551514b1d7fa30139206f0
