@@ -112,47 +112,56 @@ router.post('/edit/:id', (req,res) => {
 })
 
 
-
 router.post('/checkout', (req, res) => {
   // Obtener los productos seleccionados del cuerpo de la solicitud
   const selectedProducts = req.body.selectedProducts;
 
   // Obtener la fecha y hora actual
   const currentDate = new Date();
-  const dateTimeString = currentDate.toISOString();
+  const formattedDateTime = currentDate.toLocaleString();
 
   // Leer los datos de los zapatos desde el archivo JSON
   const shoesDataPath = path.join(__dirname, "..", "resource", "file", "shoes.json");
-  const shoesData = JSON.parse(fs.readFileSync(shoesDataPath));
+  let shoesData = JSON.parse(fs.readFileSync(shoesDataPath));
 
   // Crear un objeto con los detalles de los productos seleccionados
   const selectedProductsDetails = selectedProducts.map(product => {
     const shoeDetails = shoesData.find(shoe => shoe.id === product.id);
-      // Se encontró una coincidencia
-   // Se encontró una coincidencia
-   return {
-    id: product.id,
-    Brand: shoeDetails.Brand,
-    Model: shoeDetails.Model,
-    Color: shoeDetails.Color,
-    Size: shoeDetails.Size,
-    amount: product.cantidad,
-    Price: shoeDetails.Price // Agregar el precio del zapato
+    return {
+      id: product.id,
+      Brand: shoeDetails.Brand,
+      Model: shoeDetails.Model,
+      Color: shoeDetails.Color,
+      Size: shoeDetails.Size,
+      amount: product.cantidad,
+      Price: shoeDetails.Price // Agregar el precio del zapato
+    };
+  });
+
+  // Actualizar el stock para cada producto seleccionado
+  selectedProductsDetails.forEach(product => {
+    const shoeIndex = shoesData.findIndex(shoe => shoe.id === product.id);
+    if (shoeIndex !== -1) {
+      shoesData[shoeIndex].Stock -= product.amount;
+    }
+  });
+
+  // Guardar los datos actualizados de los zapatos en el archivo JSON
+  fs.writeFileSync(shoesDataPath, JSON.stringify(shoesData, null, 2));
+
+  // Calcular el precio total de la venta
+  const totalPrice = selectedProductsDetails.reduce((total, product) => {
+    return total + (product.Price * product.amount);
+  }, 0);
+
+  // Crear el objeto de venta completa
+  const ventaCompleta = {
+    [formattedDateTime]: {
+      detalles: selectedProductsDetails,
+      TotalPrice: totalPrice
+    }
   };
-});
 
-// Calcular el precio total de la venta
-const totalPrice = selectedProductsDetails.reduce((total, product) => {
-  return total + (product.Price * product.amount);
-}, 0);
-
-// Crear el objeto de venta completa
-const ventaCompleta = {
-  [dateTimeString]: {
-    detalles: selectedProductsDetails,
-    TotalPrice: totalPrice
-  }
-};
   // Guardar los datos en un archivo JSON
   Sales.push(ventaCompleta)
   const salesDataPath = path.join(__dirname, "..", "resource", "file", "salesRegistration.json");
@@ -161,5 +170,6 @@ const ventaCompleta = {
   // Envía una respuesta al cliente
   res.json({ message: 'Productos seleccionados y cantidades procesados y guardados con fecha y hora' });
 });
+
 
 module.exports = router;
