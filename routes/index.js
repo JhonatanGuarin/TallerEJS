@@ -166,9 +166,8 @@ router.post('/checkout', (req, res) => {
   Sales.push(ventaCompleta)
   const salesDataPath = path.join(__dirname, "..", "resource", "file", "salesRegistration.json");
   fs.writeFileSync(salesDataPath, JSON.stringify(Sales, null, 2));
+  res.redirect("/inventory")
 
-  // Envía una respuesta al cliente
-  res.json({ message: 'Productos seleccionados y cantidades procesados y guardados con fecha y hora' });
 });
 
 

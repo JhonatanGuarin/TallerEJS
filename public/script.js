@@ -1,8 +1,5 @@
-console.log('si esta pasando malpario');
-
 document.addEventListener('DOMContentLoaded', function() {
   const checkboxes = document.querySelectorAll('.form-check-input');
-
   checkboxes.forEach(checkbox => {
     const targetId = checkbox.dataset.target;
     checkbox.addEventListener('change', () => {
@@ -30,14 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
           div.appendChild(input);
           div.appendChild(incrementBtn);
           checkbox.parentNode.insertAdjacentElement('afterend', div);
-
           decrementBtn.addEventListener('click', (event) => {
             event.preventDefault();
             if (input.value > input.min) {
               input.value = parseInt(input.value) - 1;
             }
           });
-
           incrementBtn.addEventListener('click', (event) => {
             event.preventDefault();
             input.value = parseInt(input.value) + 1;
@@ -51,15 +46,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  const form = document.querySelector('form');
-
-  form.addEventListener('submit', (event) => {
+  const productForm = document.getElementById('productForm');
+  productForm.addEventListener('submit', (event) => {
     event.preventDefault();
-
-    const selectedProducts = Array.from(form.querySelectorAll('input[type="checkbox"]:checked'))
+    const selectedProducts = Array.from(productForm.querySelectorAll('input[type="checkbox"]:checked'))
       .map(checkbox => {
         const productId = checkbox.id.split('-')[1];
-        const cantidadInput = form.querySelector(`input[name="cantidad-${productId}"]`);
+        const cantidadInput = productForm.querySelector(`input[name="cantidad-${productId}"]`);
         const cantidad = cantidadInput ? parseInt(cantidadInput.value) : 1;
         return { id: productId, cantidad };
       });
@@ -71,11 +64,23 @@ document.addEventListener('DOMContentLoaded', function() {
       },
       body: JSON.stringify({ selectedProducts })
     })
-    .then(response => {
-      console.log('Productos seleccionados y cantidades enviados al servidor');
-    })
-    .catch(error => {
-      console.error('Error al enviar los productos seleccionados y sus cantidades:', error);
-    });
+      .then(response => {
+        console.log('Productos seleccionados y cantidades enviados al servidor');
+        
+        // Actualizar la página después de enviar los datos
+        if (response.ok) {
+          window.location.reload();
+        } else {
+          console.error('Error al guardar los datos');
+        }
+      })
+      .catch(error => {
+        console.error('Error al enviar los productos seleccionados y sus cantidades:', error);
+      });
   });
 });
+
+function guardarYActualizar() {
+  const productForm = document.getElementById('productForm');
+  productForm.dispatchEvent(new Event('submit'));
+}
