@@ -1,5 +1,21 @@
-document.addEventListener('DOMContentLoaded', function() {
+
+document.addEventListener('DOMContentLoaded', function () {
   const checkboxes = document.querySelectorAll('.form-check-input');
+  const productStocks = {}; // Objeto para almacenar el stock disponible de cada producto
+
+  // Función para obtener el stock disponible de cada producto desde el servidor
+  function fetchProductStocks() {
+    fetch('/get-product-stocks')
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(product => {
+          productStocks[product.id] = product.stock;
+        });
+      })
+      .catch(error => {
+        console.error('Error al obtener los stocks de los productos:', error);
+      });
+  }
   checkboxes.forEach(checkbox => {
     const targetId = checkbox.dataset.target;
     checkbox.addEventListener('change', () => {
@@ -66,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
       .then(response => {
         console.log('Productos seleccionados y cantidades enviados al servidor');
-        
+
         // Actualizar la página después de enviar los datos
         if (response.ok) {
           window.location.reload();

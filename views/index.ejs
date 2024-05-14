@@ -12,7 +12,7 @@
         <div class="row">
           <% data.forEach(function (shoe) { %>
             <div class="col-md-4">
-              <div class="card">
+              <div class="card" style="margin-top: 10px;">
                 <div class="card-header">
                   <%= shoe.Brand%> / <%= shoe.Model%>
                 </div>
@@ -34,10 +34,11 @@
             </div>
             <% }) %>
               <!-- Enlace para abrir el modal -->
-              <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Confirmar Comprar
-              </a>
-
+              <div class="" style="margin-top: 20px ; width: 20%;  ; position:fixed; bottom: 150px; left: 0;" >
+                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  Confirmar Comprar
+                </a>
+              </div>
               <!-- Modal -->
               <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                 tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -61,11 +62,11 @@
     </form>
 
 
-    <footer>
-      <%-include('./templates/footer.ejs')%>
-    </footer>
+   
 
-    
+
 </body>
-
+<footer>
+  <%-include('./templates/footer.ejs')%>
+</footer>
 </html>

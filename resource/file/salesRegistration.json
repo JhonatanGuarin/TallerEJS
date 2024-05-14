@@ -1,6 +1,22 @@
 [
   {
-    "13/5/2024, 9:08:51 p. m.": {
+    "13/5/2024, 11:39:34 p. m.": {
+      "detalles": [
+        {
+          "id": "a835a0b8",
+          "Brand": "Nike",
+          "Model": "Air Force 1 Trenzas",
+          "Color": "blanco",
+          "Size": "42",
+          "amount": 1,
+          "Price": "89.99"
+        }
+      ],
+      "TotalPrice": 89.99
+    }
+  },
+  {
+    "13/5/2024, 11:39:43 p. m.": {
       "detalles": [
         {
           "id": "0a50dbb5",
@@ -16,53 +32,19 @@
     }
   },
   {
-    "13/5/2024, 9:09:13 p. m.": {
+    "13/5/2024, 11:39:51 p. m.": {
       "detalles": [
         {
-          "id": "a42f2b63",
-          "Brand": "Adidas",
-          "Model": "NMD R1",
-          "Color": "blanco",
-          "Size": "43",
-          "amount": 1,
-          "Price": "139.99"
-        },
-        {
-          "id": "de4ce02d",
-          "Brand": "Puma",
-          "Model": "RS-X",
-          "Color": "rojo",
-          "Size": "43",
-          "amount": 12,
-          "Price": "99.99"
-        }
-      ],
-      "TotalPrice": 1339.87
-    }
-  },
-  {
-    "13/5/2024, 9:09:26 p. m.": {
-      "detalles": [
-        {
-          "id": "0a50dbb5",
+          "id": "a835a0b8",
           "Brand": "Nike",
-          "Model": "Air Max 270",
-          "Color": "negro",
-          "Size": "44",
-          "amount": 1,
-          "Price": "149.99"
-        },
-        {
-          "id": "93a4cf3e",
-          "Brand": "Converse",
-          "Model": "Chuck Taylor All Star",
-          "Color": "negro",
-          "Size": "39",
-          "amount": 1,
-          "Price": "59.99"
+          "Model": "Air Force 1 Trenzas",
+          "Color": "blanco",
+          "Size": "42",
+          "amount": 5,
+          "Price": "89.99"
         }
       ],
-      "TotalPrice": 209.98000000000002
+      "TotalPrice": 449.95
     }
   }
 ]
