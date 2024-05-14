@@ -1,163 +1,31 @@
 [
   {
-    "2024-05-13T21:51:21.034Z": {
+    "13/5/2024, 6:33:43 p. m.": {
       "detalles": [
+        {
+          "id": "a42f2b63",
+          "Brand": "Adidas",
+          "Model": "NMD R1",
+          "Color": "blanco",
+          "Size": "43",
+          "amount": 13,
+          "Price": "139.99"
+        },
         {
           "id": "de4ce02d",
           "Brand": "Puma",
           "Model": "RS-X",
           "Color": "rojo",
           "Size": "43",
-          "amount": 2,
+          "amount": 12,
           "Price": "99.99"
-        },
-        {
-          "id": "290707b7",
-          "Brand": "Puma",
-          "Model": "Cali Sport",
-          "Color": "azul",
-          "Size": "41",
-          "amount": 1,
-          "Price": "89.99"
         }
       ],
-      "TotalPrice": 289.96999999999997
+      "TotalPrice": 3019.75
     }
   },
   {
-    "2024-05-13T21:51:45.879Z": {
-      "detalles": [
-        {
-          "id": "584a0802",
-          "Brand": "Clarks",
-          "Model": "Tilden Walk",
-          "Color": "marrón",
-          "Size": "44",
-          "amount": 1,
-          "Price": "109.99"
-        },
-        {
-          "id": "c018ff70",
-          "Brand": "Timberland",
-          "Model": "6-Inch Premium",
-          "Color": "amarillo",
-          "Size": "41",
-          "amount": 5,
-          "Price": "149.99"
-        },
-        {
-          "id": "8725e07e",
-          "Brand": "Adidas",
-          "Model": "Ultraboost",
-          "Color": "gris",
-          "Size": "40",
-          "amount": 11,
-          "Price": "179.99"
-        }
-      ],
-      "TotalPrice": 2839.83
-    }
-  },
-  {
-    "2024-05-13T21:51:53.064Z": {
-      "detalles": [
-        {
-          "id": "a42f2b63",
-          "Brand": "Adidas",
-          "Model": "NMD R1",
-          "Color": "blanco",
-          "Size": "43",
-          "amount": 10,
-          "Price": "139.99"
-        }
-      ],
-      "TotalPrice": 1399.9
-    }
-  },
-  {
-    "2024-05-13T22:03:51.957Z": {
-      "detalles": [
-        {
-          "id": "de4ce02d",
-          "Brand": "Puma",
-          "Model": "RS-X",
-          "Color": "rojo",
-          "Size": "43",
-          "amount": 4,
-          "Price": "99.99"
-        },
-        {
-          "id": "290707b7",
-          "Brand": "Puma",
-          "Model": "Cali Sport",
-          "Color": "azul",
-          "Size": "41",
-          "amount": 1,
-          "Price": "89.99"
-        }
-      ],
-      "TotalPrice": 489.95
-    }
-  },
-  {
-    "2024-05-13T22:13:57.428Z": {
-      "detalles": [
-        {
-          "id": "584a0802",
-          "Brand": "Clarks",
-          "Model": "Tilden Walk",
-          "Color": "marrón",
-          "Size": "44",
-          "amount": 3,
-          "Price": "109.99"
-        },
-        {
-          "id": "a42f2b63",
-          "Brand": "Adidas",
-          "Model": "NMD R1",
-          "Color": "blanco",
-          "Size": "43",
-          "amount": 1,
-          "Price": "139.99"
-        }
-      ],
-      "TotalPrice": 469.96
-    }
-  },
-  {
-    "2024-05-13T23:12:04.238Z": {
-      "detalles": [
-        {
-          "id": "584a0802",
-          "Brand": "Clarks",
-          "Model": "Tilden Walk",
-          "Color": "marrón",
-          "Size": "44",
-          "amount": 1,
-          "Price": "109.99"
-        }
-      ],
-      "TotalPrice": 109.99
-    }
-  },
-  {
-    "2024-05-13T23:14:43.131Z": {
-      "detalles": [
-        {
-          "id": "a42f2b63",
-          "Brand": "Adidas",
-          "Model": "NMD R1",
-          "Color": "blanco",
-          "Size": "43",
-          "amount": 10,
-          "Price": "139.99"
-        }
-      ],
-      "TotalPrice": 1399.9
-    }
-  },
-  {
-    "2024-05-13T23:15:28.461Z": {
+    "13/5/2024, 7:09:48 p. m.": {
       "detalles": [
         {
           "id": "a835a0b8",
@@ -165,7 +33,23 @@
           "Model": "Air Force 1 Trenzas",
           "Color": "blanco",
           "Size": "42",
-          "amount": 1,
+          "amount": 2,
+          "Price": "89.99"
+        }
+      ],
+      "TotalPrice": 179.98
+    }
+  },
+  {
+    "13/5/2024, 7:10:21 p. m.": {
+      "detalles": [
+        {
+          "id": "a835a0b8",
+          "Brand": "Nike",
+          "Model": "Air Force 1 Trenzas",
+          "Color": "blanco",
+          "Size": "42",
+          "amount": 2,
           "Price": "89.99"
         },
         {
@@ -174,11 +58,11 @@
           "Model": "Air Max 270",
           "Color": "negro",
           "Size": "44",
-          "amount": 1,
+          "amount": 3,
           "Price": "149.99"
         }
       ],
-      "TotalPrice": 239.98000000000002
+      "TotalPrice": 629.95
     }
   },
   {
